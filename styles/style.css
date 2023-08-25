@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --dark-red: #DB3323;
+    --dark-blue: #253969;
+    --light-gray: #D9D9D9;
+    --white:#FFF;
+}
+
+#hero--section{
+    background-color: var(--dark-blue);
+    height: 420px;
+    width: 100%
+}
+
+#hero-section--title{
+    width: 192px;
+    height: 139px;
+    margin: 0px 0px 0px 32px;
+    padding-top: 32px ;
+    font-family: 'Nunito', sans-serif;
+    color: var(--white);
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#hero--section-subtitle{
+    width: 240px;
+    height: 130px;
+    margin: 0px 0px 8px 32px;
+    padding-top: 16px ;
+    color: #FFF;
+    font-family:'Nunito', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#hero--section-text{
+    width: 200px;
+    height: 30px;
+    margin: 8px 0px 16px 32px;
+    color: #FFF;
+    font-family:'Nunito', sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#hero--section-button{
+    width: 156px;
+    height: 32px;
+    margin: 8px 0px 16px 32px;
+    border-radius: 8px;
+    border-style: none;
+    background:var(--dark-red);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+
+}
+
+#hero--section-button a {
+    color: var(--white);
+    font-size:'Nunito', sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+
+}
