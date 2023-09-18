@@ -10,6 +10,66 @@
 
 }
 
+/* 
+header {
+  background-color: var(--dark-blue);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+ */
+
+ #nav-bar{
+  background-color: var(--dark-red);
+  color: white;
+  height: 100vh;
+  width: 100%;
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+ }
+
+ #nav-bar h2{
+  margin-top: 100px
+ }
+
+ #nav-bar a{
+  text-decoration: none;
+  color: var(--white);
+ }
+
+ #close--icon{
+    background-color: var(--dark-blue);
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: none;
+    display: flex;
+    align-self: flex-end;
+    font-size: 30px;
+ }
+
+
+ button i{
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  color: var(--white);
+}
+
+.menu--icon {
+background-color: transparent;
+margin: 5px;
+border: none;
+}
+
+.hide{
+  display: none;
+}
+
 #hero--section{
     background-color: var(--dark-blue);
     height: 420px;
@@ -205,7 +265,7 @@
     color: var(--white);
   }
 
-  .projects--section{
+  #projects--section{
     background-color: var(--dark-blue);
     color: var(--white);
     height: 2000px;
@@ -318,7 +378,7 @@
     font-size: 18px;
   }
 
-  .contact--section{
+  #contact--section{
     background-color: var(--dark-red);
     height: 640px;
     color: var(--white);
@@ -327,7 +387,7 @@
     padding: 10px 20px 0px 20px;
   }
 
-  .contact--section input{
+  #contact--section input{
     width: 300px;
     height: 32px;
     display: flex;
@@ -337,16 +397,16 @@
     border: none;
   }
   
-  .contact--section label {
+  #contact--section label {
     margin-left: 5px;
   }
 
-  .contact--section fieldset{
+  #contact--section fieldset{
     display: flex;
     flex-direction: column;
   }
 
-  .contact--section textarea{
+  #contact--section textarea{
     display: flex;
     align-self: center;
     height: 200px;
@@ -356,7 +416,7 @@
 
   }
 
-  .contact--section button{
+  #contact--section button{
     display: flex;
     align-self: center;
     margin:10px auto 0 auto;
