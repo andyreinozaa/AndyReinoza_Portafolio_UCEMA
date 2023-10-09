@@ -32,6 +32,12 @@ header {
   padding: 20px;
  }
 
+.nav-bar-mobile{
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--dark-red);
+}
+
  #nav-bar h2{
   margin-top: 100px
  }
@@ -55,19 +61,16 @@ header {
 
  button i{
   margin: 5px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
   color: var(--white);
 }
 
 .menu--icon {
-background-color: transparent;
+background-color: var(--dark-blue);
 margin: 5px;
 border: none;
-}
-
-.hide{
-  display: none;
 }
 
 #hero--section{
@@ -459,3 +462,5 @@ border: none;
     color: #0df053;
     background-color: white;
   }
+
+  
