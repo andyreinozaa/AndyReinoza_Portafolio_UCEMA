@@ -1,148 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
-        rel="stylesheet">
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/2d9c371b9c.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./Assets/Icons/AR_Favicon.svg" type="image/x-icon">
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/eb496ab1a0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/2d9c371b9c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="shortcut icon"
+      href="./Assets/Icons/AndyReinoza_Logo.svg"
+      type="image/x-icon"
+    />
     <title>Portafolio Andy Reinoza</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <div id="app">
-        <header>
-            <div class="nav-bar-mobile">
-                <button class="menu--icon" v-show="showMenuButton" v-on:click="toggleNav">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+      <header>
+        <div class="nav-bar">
+          <button
+            class="menu--icon"
+            v-show="showMenuButton"
+            v-on:click="toggleNav"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <a href="./index.html">
+            <img
+              src="./Assets/Icons/AndyReinoza_Logo.svg"
+              alt="Andy Reinoza Developer"
+            />
+        </a>
+          <nav v-show="showDesktopNav">
+            <div class="navLinks--desktop">
+              <ul class="links-desktop--container">
+                <li>
+                  <a v-for="link in navLinkList" v-bind:href="link.link" class="navLinkItem">{{link.name}}</a>
+                </li>
+              </ul>
             </div>
-            <nav id="nav-bar" v-show="showMobileNav">
-                <button id="close--icon" v-on:click="toggleNav"> <i class="fa-solid fa-x"></i> </button>
-                <h2>Menu:</h2>
-                <ul>
-                    <li><a href="#About-me--section">About Me</a></li>
-                    <li><a href="#experience--section">My Experience</a></li>
-                    <li><a href="#skillset--section">My Skillset</a></li>   
-                    <li><a href="#projects--section">My Projects</a></li>
-                    <li><a href="#contact--section">Contact Me</a></li>
-                </ul>
-            </nav>
-            </head>
-            <main>
-                <section id="hero--section" class="wave-blue-container">
-                    <h1 id="hero-section--title">Hi I'm Andy</h1>
-                    <h2 id="hero--section-subtitle">Web Developer & Data Analyst Trainee</h2>
-                    <p id="hero--section-text">HTML || CSS || Javascript || Python || Pandas || SQL</p>
-                    <button id="hero--section-button"><a
-                            href="https://tidycal.com/andyreinozaa/networking-meeting">Let's Talk</a></button>
-                </section>
-                <section id="About-me--section" class="wave-red-container">
-                    <h2 id="section--title">About Me</h2>
-                    <p id="About-me-section--text">
-                        I have a true passion for business, especially those rooted in technology.
-                        My curiosity has allowed me to develop experience of online education, e-commerce, and
-                        cryptocurrencies.
-                        Currently, my focus is on learning web development to bring my digital business vision to life.
-                    </p>
-                </section>
-                <section id="experience--section" class="wave-blue-container">
-                    <h2 id="section--title">Experience</h2>
-                    <div>
-                        <h3 id="section--subtitle">Duo Bran Media</h3>
-                        <h4 id="experience-section--job-role">Community Manager - Email Marketing || April 2023 -
-                            Present</h4>
-                        <ul id="experience-section--job-role">
-                            <li>Development of marketing strategies on social media platforms, particularly Instagram
-                                and TikTok</li>
-                            <li>Compilation of account management reports and achieved results.</li>
-                            <li>Creation and scheduling of content for social media platforms.</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 id="section--subtitle">Platzi</h3>
-                        <h4 id="experience-section--job-role">Quality Content Assurance || April 2022 - April 2023</h4>
-                        <ul id="experience-section--job-role">
-                            <li>Created reports that contributed to improve the quality of business and marketing
-                                courses.</li>
-                            <li>Worked in teams using agile methodologies in English, Portuguese and Spanish.</li>
-                            <li>Won the Hackathon by presenting innovative solutions that optimized the workflow.</li>
-                        </ul>
-                    </div>
+          </nav>
+          <a href="./login.html" class="secondary-btn">Log In</a>
+        </div>
+        <div class="nav-bar-open--mobile" v-show="showMobileNav">
+          <button id="close--icon" v-on:click="toggleNav">
+            <i class="fa-solid fa-x"></i>
+          </button>
+          <h2>Menu:</h2>
+          <ul class="links-mobile--container">
+            <li v-for="link in navLinkList">
+              <a v-bind:href="link.link">{{link.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main>
+        <section class="hero--section">
+          <div class="hero-content-section">
+            <div class="hero-text--section">
+              <h1 class="hero-section--title">Hi I'm Andy</h1>
+              <h2 class="hero--section-subtitle">
+                Developer | Marketer | Data
+              </h2>
+              <p class="hero--section-text">
+                Transforming Business into the digital world
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="About-me--section" >
+          <h2 id="section--title">About Me</h2>
+          <p class="Section--text--AboutMe">
+            I have a true passion for business, especially those rooted in
+            technology. My curiosity has allowed me to develop experience of
+            online education, e-commerce, and cryptocurrencies. Currently, my
+            focus is on learning web development to bring my digital business
+            vision to life.
+          </p>
+        </section>
+        <section id="experience--section">
+          <h2 id="section--title">Experience</h2>
+          <div>
+            <h3 id="section--subtitle">Focus Marketing</h3>
+            <h4 id="experience-section--job-role">
+              Community Manager - Email Marketing || April 2023 - Present
+            </h4>
+            <ul id="experience-section--job-role">
+              <li>
+                Development of marketing strategies on social media platforms,
+                particularly Instagram and TikTok
+              </li>
+              <li>
+                Compilation of account management reports and achieved results.
+              </li>
+              <li>
+                Creation and scheduling of content for social media platforms.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 id="section--subtitle">Platzi</h3>
+            <h4 id="experience-section--job-role">
+              Quality Content Assurance || April 2022 - April 2023
+            </h4>
+            <ul id="experience-section--job-role">
+              <li>
+                Created reports that contributed to improve the quality of
+                business and marketing courses.
+              </li>
+              <li>
+                Worked in teams using agile methodologies in English, Portuguese
+                and Spanish.
+              </li>
+              <li>
+                Won the Hackathon by presenting innovative solutions that
+                optimized the workflow.
+              </li>
+            </ul>
+          </div>
+          <a
+            class="button"
+            href="https://www.linkedin.com/in/andyreinozaa/?locale=en_US"
+          >
+            Know more about my Experience
+            </a>
+        </section>
+        <section id="skillset--section">
+          <h2 id="section--title">My Skillset</h2>
+          <div id="skillset--section--icons-container">
+            <div v-for="(skill, key) in skillsList" :key="key">
+              <i><img v-bind:src="skill.image" alt="{{skill.name}}" /></i>
+              <p class="skill-section-icons-text">{{skill.name}}</p>
+            </div>
+          </div>
+        </section>
+        <section id="projects--section">
+          <h2 id="section--title">My Projects</h2>
+          <p class="Section--text">
+            I love to create projects of Data Analysis and web development here
+            are some examples:
+          </p>
 
-                    <a class="button" href="https://www.linkedin.com/in/andyreinozaa/?locale=en_US"> Know more about my
-                        Experience</a>
+          <div class="projects--section-container">
+              <div class="projects--section-card" v-for="project in projectList">
+                <img v-bind:src="project.image" alt="{{project.name}}" />
+                <h4>{{project.name}}</h4>
+                <p class="text--card">{{project.description}}</p>
+                <div class="tags--card">
+                  <p v-for="tag in project.tags" v-bind:id="tag.id">{{tag.name}}</p>
+                </div>
+                <a class="button" v-bind:href="project.repoLink"
+                  >Visit the Repository</a
+                >
+              </div>
+          </div>
 
-                </section>
-                <section id="skillset--section" class="wave-red-container">
-                    <h2 id="section--title">My Skillset</h2>
-                    <div id="skillset--section--icons-container">
-                        <div v-for="skill in skillsList" v-bind:key="skill.name">
-                            <i><img v-bind:src="skill.image" alt="{{skill.name}}"></i>
-                            <p class="skill-section-icons-text">{{skill.name}}</p>
-                        </div>
-
-                    </div>
-                </section>
-                <section id="projects--section" class="wave-red-container">
-                    <h2 id="section--title">My Projects</h2>
-                    <p id="About-me-section--text">I love to create projects of Data Analysis and web development here
-                        are some examples:</p>
-
-                    <div class="projects--section-card" v-for="project in projectList" >
-                        <img v-bind:src="project.image" alt="{{project.name}}">
-                        <h4>{{project.name}}</h4>
-                        <p class="text--card">{{project.description}}</p>
-                        <div class="tags--card">
-                            <p v-for="tag in project.tags" v-bind:id="tag.id">{{tag.name}}</p>
-                        </div>
-                        <a class="button" v-bind:href="project.repoLink">Visit the
-                            Repository</a>
-                    </div>
-
-                </section>
-
-                <section id="contact--section" class="wave-blue-container">
-                    <h2 class="section--title"> Contact Me</h2>
-                    <p class="About-me-section--text">Fill this form and I'll reply you as soon as possible.</p>
-                    <form action="mailto:agreinoza22@ucema.edu.ar">
-                        <fieldset>
-                            <legend>Contact Information</legend>
-                            <label for="fullname">Your Name</label>
-                            <input type="text" name="fullname" id="fullname" placeholder="Andres Reinoza" required>
-                            <label for="cellphone">Your Cellphone Number</label>
-                            <input type="tel" name="cellphone" id="cellphone" placeholder="+5491132839549" required>
-                            <label for="email">Your Email</label>
-                            <input type="email" name="email" id="email" placeholder="andy@gmail.com" required>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Your Message</legend>
-                            <label for="lead_message">Write here your Questions</label>
-                            <textarea name="lead_message" id="" cols="30" rows="10"
-                                placeholder="I want a website for my business with..."></textarea>
-                        </fieldset>
-                        <button type="submit" class="button">Send Button</button>
-                    </form>
-                </section>
-
-                <section>
-                    <a href="https://wa.me/558197488448" id="btn-whatsapp" target="_blank"> <i
-                            class="fa fa-whatsapp icono"></i></a>
-                </section>
+        </section>
+        <section id="contact--section">
+          <h2 class="section--title">Contact Me</h2>
+          <p class="Section--text">
+            Fill this form and I'll reply you as soon as possible.
+          </p>
+          <div class="form--container">
+            <img src="./Assets/images/Contact_Image.png" alt="Contact Image a person writting" class="contact--section--img">
+            <form action="mailto:agreinoza22@ucema.edu.ar">
+              <fieldset>
+                <legend>Contact Information</legend>
+                <label for="fullname">Your Name</label>
+                <input
+                  type="text"
+                  name="fullname"
+                  id="fullname"
+                  placeholder="Andres Reinoza"
+                  required
+                />
+                <label for="cellphone">Your Cellphone Number</label>
+                <input
+                  type="tel"
+                  name="cellphone"
+                  id="cellphone"
+                  placeholder="+5491132839549"
+                  required
+                />
+                <label for="email">Your Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="andy@gmail.com"
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <legend>Your Message</legend>
+                <label for="lead_message">Write here your Questions</label>
+                <textarea
+                  name="lead_message"
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="I want a website for my business with..."
+                ></textarea>
+              </fieldset>
+              <button type="submit" class="button">Send Button</button>
+            </form>
+          </div>          
+        </section>
+      </main>
     </div>
-    </main>
     <footer>
-        <a href="https://github.com/andyreinozaa"> Made by @andyreinozaa 2023 ⚡</a>
+      <a href="https://github.com/andyreinozaa">
+        Made by @andyreinozaa 2023 ⚡</a
+      >
     </footer>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./scripts/main.js"></script>
-</body>
-
+  </body>
 </html>
