@@ -1,9 +1,19 @@
 const app = Vue.createApp({
     data: function () {
         return {
-            showMenuButton: true,
+            showMenuButton: window.innerWidth < 768 ? true : false,
+            showCloseButton: false,
+            showDesktopNav: window.innerWidth > 768 ? true : false,
             showMobileNav: false,
+            navLinkList: [
+                { name: "About me", link: "#About-me--section" },
+                { name: "Skills", link: "#skillset--section" },
+                { name: "Experience", link: "#experience--section" },
+                { name: "Projects", link: "#projects--section" },
+                { name: "Contact me", link: "#contact--section" },
+              ],
 
+              
             skillsList: 
                 {
                     HTML: {
@@ -42,9 +52,14 @@ const app = Vue.createApp({
                         name: "API",
                         image: "./Assets/Icons/API_Icon.png",
                     },
+                    OOP:{
+                      name:"OOP",
+                      image: "./Assets/Icons/OOP_Icon.png"
+                    },
+
                     Pandas: {
                         name: "Pandas",
-                        image: "./Assets/Icons/API_Icon.png",
+                        image: "./Assets/Icons/Pandas_Icon.png",
                     },
                     Seaborn: {
                         name: "Seaborn",
@@ -66,64 +81,55 @@ const app = Vue.createApp({
                         name: "MySQL",
                         image: "./Assets/Icons/MySQL_Icon.png",
                     }
-
+                    ,
+                    Notion: {
+                      name: "Notion",
+                      image: "./Assets/Icons/Notion_Icon.png",
+                  },
+                  Trello:{
+                    name:"Trello",
+                    image: "./Assets/Icons/Trello_Icon.png"
+                  }
                 }
             
             ,
-
             projectList: [
                 {
-                    name: "DataSet creation MCU",
-                    image: "./Assets/images/MCU_Image.png",
-                    description: "In this project, I used Python and its pandas library in Google Colab to clean and preprocess a dataset containing information about MCU movies and series.",
-                    tags:{
-                        Python: {
-                            id: "Python--ID",
-                            name: "Python"
-                        },
-                        Pandas: {
-                            id: "Pandas--ID",
-                            name: "Pandas"
-                        },
-                    },
-                    repoLink: "https://github.com/andyreinozaa/LimpiezaDatos_MCU",
+                  name: "DataSet creation MCU",
+                  image: "./Assets/images/MCU_Image.png",
+                  description:
+                    "In this project, I used Python and its pandas library in Google Colab to clean and preprocess a dataset containing information about MCU movies and series.",
+                  tags: [
+                    { id: "Python--ID", name: "Python" },
+                    { id: "Pandas--ID", name: "Pandas" },
+                  ],
+                  repoLink: "https://github.com/andyreinozaa/LimpiezaDatos_MCU",
                 },
                 {
-                    name: "Felinos",
-                    image: "./Assets/images/Felinos_Image.png",
-                    description: "Python code modeling feline behavior, including a 'baghera' instance for demonstration. Try this OOP Project!",
-                    tags:{
-                        Python: {
-                            id: "Python--ID",
-                            name: "Python"
-                        },
-                        OOP: {
-                            id: "POO--ID",
-                            name: "OOP"
-                        },
-                    },
-                    repoLink: "https://github.com/andyreinozaa/Felinos",
+                  name: "Felinos",
+                  image: "./Assets/images/Felinos_Image.png",
+                  description:
+                    "Python code modeling feline behavior, including a 'baghera' instance for demonstration. Try this OOP Project!",
+                  tags: [
+                    { id: "Python--ID", name: "Python" },
+                    { id: "POO--ID", name: "OOP" },
+                  ],
+                  repoLink: "https://github.com/andyreinozaa/Felinos",
                 },
                 {
-                    name: "Batatabit Clone",
-                    image: "./Assets/images/Batatabit_Image.png",
-                    description: "Here is my clone to the BatataBit Prototype. This is a criptocurrency exchange, made in the Mobile First course in Platzi.",
-                    tags:{
-                        HTML: {
-                            id: "HTML--ID",
-                            name: "HTML"
-                        },
-                        CSS: {
-                            id: "CSS--ID",
-                            name: "CSS"
-                        }
-
-                    },
-                    repoLink: "https://github.com/andyreinozaa/BataBitPrototype"
-                }
-            ]
-        }
-    },
+                  name: "Batatabit Clone",
+                  image: "./Assets/images/Batatabit_Image.png",
+                  description:
+                    "Here is my clone to the BatataBit Prototype. This is a cryptocurrency exchange, made in the Mobile First course in Platzi.",
+                  tags: [
+                    { id: "HTML--ID", name: "HTML" },
+                    { id: "CSS--ID", name: "CSS" },
+                  ],
+                  repoLink: "https://github.com/andyreinozaa/BataBitPrototype",
+                },
+              ],
+            };
+          },
 
 
     methods: {
@@ -132,7 +138,8 @@ const app = Vue.createApp({
             this.showMobileNav = !this.showMobileNav
         },
 
-    }
+
+    },
     }
 )
 
